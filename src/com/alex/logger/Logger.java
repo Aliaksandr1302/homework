@@ -1,20 +1,21 @@
 package com.alex.logger;
 
-import java.io.File;
-import java.io.IOException;
+
+import java.io.*;
+import java.util.Scanner;
 
 public class Logger {
-    public static void main(String[] args) throws IOException {
-        File file = new File("log.txt");
-        if (!file.exists()) {
-            try {
-                boolean created = file.createNewFile();
-                if(created){
-                   System.out.println("Created");
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+
+
+//    private final Scanner scanner = new Scanner();
+
+    public static void main(String[] args) {
+        String s = "dfhdhdhdhd";
+        System.out.println(s);
+        BaseLogger.writeToFile("printed");
+
+
     }
+
+
 }
