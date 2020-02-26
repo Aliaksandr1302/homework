@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Utils {
     public static Scanner scanner;
+    static {
+        scanner = new Scanner(System.in);
+    }
 
     public Utils() {
     }
@@ -60,8 +63,12 @@ public class Utils {
         }
 
     }
-
-    static {
-        scanner = new Scanner(System.in);
+   public static void printArray(String[][] doubleArray){
+        for(int i = 0; i < doubleArray.length; i++){
+            System.out.println("");
+            for (int j = 0; j < doubleArray[i].length; j++) {
+                System.out.print(doubleArray[i][j] + "\t");
+            }
+        }
     }
 }
