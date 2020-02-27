@@ -5,28 +5,25 @@ import com.alex.Utils;
 public class DoubleArrayTask3 {
 
     public static void main(String[] args) {
-        int[][] doubleArray = new int[5][5];
-        for (int i = 0; i < doubleArray.length; i++) {
-            int temp = 1;
 
-            for (int j = 0; j < doubleArray[i].length; j++) {
-                if (i == j) {
-                    doubleArray[i][j] = 1;
-                    temp = doubleArray[i][j];
+        int[][] doubleArray = new int[5][5];
+
+        int temp = 1;
+        for (int i = 0; i < doubleArray.length; i++) {
+            int j = 0;
+            doubleArray[i][j] = temp;
+            temp++;
+        }
+        for (int i = 0; i < doubleArray.length; i++) {
+            int temp1 = doubleArray[i][0];
+            int temp2 = 1;
+            for (int j = 1; j < doubleArray[i].length; j++) {
+                temp1--;
+                doubleArray[i][j] = temp1;
+                if(j>i){
+                    temp2++;
+                    doubleArray[i][j] = temp2;
                 }
-                if (j == i + temp || j == i - temp) {
-                    temp++;
-                    doubleArray[i][j] = temp;
-                }
-//                if (j == i - temp - temp) {
-//                    doubleArray[i][j] = temp + temp + temp;
-//                }
-//                if (j == i - temp - temp - temp) {
-//                    doubleArray[i][j] = temp + temp + temp + temp;
-//                }
-//                if (j == i - temp - temp - temp - temp) {
-//                    doubleArray[i][j] = temp + temp + temp + temp + temp;
-//                }
             }
         }
         Utils.printArray(doubleArray);
