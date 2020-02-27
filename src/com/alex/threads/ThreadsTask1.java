@@ -6,5 +6,11 @@ public class ThreadsTask1 {
         System.out.println(thread.getState());
         thread.start();
         System.out.println(thread.getState());
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(thread.getState());
     }
 }
