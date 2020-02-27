@@ -2,7 +2,7 @@ package com.alex.cat_in_a_box;
 
 public class Cat {
     private String name;
-    private boolean alive = true;
+    private boolean alive;
 
 
     public String getName() {
@@ -12,14 +12,21 @@ public class Cat {
     public void setName(String name) {
         this.name = name;
     }
-
-    public boolean isAlive() {
-        return alive;
-    }
-
-    public Cat(String name, boolean alive) {
-        this.name = name;
+    public void setIsAlive(boolean alive) {
         this.alive = alive;
     }
 
+    public boolean getIsAlive() {
+        return alive;
+    }
+
+    public Cat(String name) {
+        this.name = name;
+        this.alive = true;
+    }
+
+    public Cat(){
+    }
+
 }
+
