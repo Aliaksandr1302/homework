@@ -6,7 +6,7 @@ public class DoubleArrayTask3 {
 
     public static void main(String[] args) {
 
-        int[][] doubleArray = new int[5][5];
+        int[][] doubleArray = new int[9][9];
 
         int temp = 1;
         for (int i = 0; i < doubleArray.length; i++) {
