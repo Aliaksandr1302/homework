@@ -1,6 +1,7 @@
 package com.alex.it_workers;
 
 public class Project {
+
     public static void main(String[] args) {
         ItWorker[] itWorkers = {
                 new Intern("Nikolai"),
@@ -17,12 +18,33 @@ public class Project {
         for (ItWorker itWorker: itWorkers){
            System.out.println(itWorker.toString());
         }
+
         workingDay(itWorkers);
+
     }
+
+
+
+    private static Intern intern(ItWorker[] itWorkers){
+        for (ItWorker itWorker: itWorkers){
+            if(itWorker instanceof Intern){
+                return (Intern) itWorker;
+            }
+        }
+        return null;
+    }
+
+    private static void internGiveCoffee(ItWorker[] itWorkers){
+        Intern intern = intern(itWorkers);
+        intern.makeCoffee();
+    }
+
     private static void workingDay(ItWorker[] itWorkers){
      for (ItWorker itWorker: itWorkers){
+//     internGiveCoffee(itWorkers);
          itWorker.makeCoffee();
          System.out.println(itWorker.toString());
-     }
+        }
+
     }
 }

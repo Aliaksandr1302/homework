@@ -1,5 +1,7 @@
 package com.alex.it_workers;
 
+import java.util.Objects;
+
 public abstract class ItWorker implements MakerСoffee{
     private String name;
     private TypeDeveloper typeDeveloper;
@@ -68,6 +70,6 @@ public abstract class ItWorker implements MakerСoffee{
 
     @Override
     public void makeCoffee() {
-
     }
+
 }
