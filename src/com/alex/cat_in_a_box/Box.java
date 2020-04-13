@@ -1,60 +1,43 @@
 package com.alex.cat_in_a_box;
 
-import javafx.animation.ScaleTransition;
-
-import java.nio.channels.ScatteringByteChannel;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Box {
     private boolean status;
-    private static final Scanner scanner = new Scanner(System.in);
-    private static final Random random = new Random();
-    private static Cat cat = new Cat();
-    private static Box box = new Box(cat);
+    private Random random = new Random();
+    private boolean catIsAlive;
 
-    private Box(Cat cat) {
-        this.status = true;
+
+    public Box(Cat cat) {
+        this.status = false;
+        this.catIsAlive = cat.getIsAlive();
     }
 
-    public static void main(String[] args) {
-        System.out.println("Enter Cat name");
-        cat.setName(scanner.nextLine());
-        System.out.println(box.statusBox(box));
-        System.out.println("the probability that the cat is alive " + box.catAliveProbability(box) + "%");
-        box.openedBox();
-        System.out.println(box.statusBox(box));
-        System.out.println("the probability that the cat is alive " + box.catAliveProbability(box) + "%");
+
+   public void openedBox() {
+       status = true;
+       isCatIsAlive();
+       catAliveProbability();
     }
 
-    private void openedBox() {
-        box.status = false;
+    private boolean isCatIsAlive(){
         int probability = random.nextInt(100);
-        if (probability < 50) {
-            cat.setIsAlive(false);
-            System.out.println(cat.getName() + " is dead");
-        } else {
-            System.out.println(cat.getName() + " alive");
+        if (probability < 50){
+            catIsAlive = true;
         }
+        return catIsAlive;
     }
 
-    private int catAliveProbability(Box box) {
-        if (status) {
+    private int catAliveProbability() {
+        if (!status) {
             return 50;
-        } else if (!cat.getIsAlive()) {
-            return 100;
-        } else {
+        } else if (!catIsAlive) {
+            System.out.println("Cat is dead");
             return 0;
-        }
-    }
-
-    private String statusBox(Box box) {
-        if (status) {
-            return "Box closed";
         } else {
-            return "Box opened";
+            System.out.println("Cat is alive");
+            return 100;
         }
     }
-
 
 }
