@@ -5,9 +5,10 @@ import java.util.Random;
 public class Box {
     private boolean status = true;
     private Random random = new Random();
-    private static Cat cat = new Cat();
+    private Cat cat;
 
     public Box(Cat cat) {
+        this.cat = cat;
     }
 
     public void openedBox() {
