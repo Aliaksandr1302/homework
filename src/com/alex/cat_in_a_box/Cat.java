@@ -1,7 +1,7 @@
 package com.alex.cat_in_a_box;
 
 public class Cat {
-    private boolean alive;
+    private boolean alive = true;
 
     public void setIsAlive(boolean alive) {
         this.alive = alive;

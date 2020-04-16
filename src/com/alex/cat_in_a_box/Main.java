@@ -5,6 +5,6 @@ public class Main {
         Cat cat = new Cat();
         Box box = new Box(cat);
         box.openedBox();
-
+        box.openedBox();
     }
 }
