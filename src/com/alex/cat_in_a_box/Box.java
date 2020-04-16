@@ -34,15 +34,12 @@ public class Box {
         }
     }
 
-    private int catAliveProbability() {
+    private void catAliveProbability() {
         if (status) {
-            return 50;
         } else if (!cat.getIsAlive()) {
             System.out.println("Cat is dead");
-            return 0;
         } else {
             System.out.println("Cat is alive");
-            return 100;
         }
     }
 
