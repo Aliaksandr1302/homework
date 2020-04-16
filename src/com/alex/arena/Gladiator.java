@@ -1,5 +1,6 @@
 package com.alex.arena;
 
+
 public class Gladiator extends Warrior {
     private int defense = 35;
 
@@ -26,6 +27,7 @@ public class Gladiator extends Warrior {
     public void attack(Warrior warrior) {
         warrior.takeDamage(attack);
     }
+
     @Override
     public String toString() {
         return "Warrior{" +

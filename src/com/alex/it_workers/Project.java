@@ -25,7 +25,7 @@ public class Project {
 
 
 
-    private static Intern intern(ItWorker[] itWorkers){
+    private static Intern findIntern(ItWorker[] itWorkers){
         for (ItWorker itWorker: itWorkers){
             if(itWorker instanceof Intern){
                 return (Intern) itWorker;
@@ -35,8 +35,8 @@ public class Project {
     }
 
     private static void internGiveCoffee(ItWorker[] itWorkers){
-        Intern intern = intern(itWorkers);
-        intern.makeCoffee();
+//        Intern intern = intern(itWorkers);
+//        intern.makeCoffee();
     }
 
     private static void workingDay(ItWorker[] itWorkers){
