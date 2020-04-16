@@ -27,12 +27,11 @@ public class Box {
 
     }
 
-    private boolean isCatIsAlive() {
+    private void isCatIsAlive() {
         int probability = random.nextInt(100);
         if (probability < 50) {
             cat.setIsAlive(false);
         }
-        return cat.getIsAlive();
     }
 
     private int catAliveProbability() {
