@@ -1,6 +1,9 @@
 package com.alex.librarian.entry;
 
+import com.alex.librarian.base.EventListener;
+import com.alex.librarian.base.event.AddBookListener;
 import com.alex.librarian.entity.Book;
+import com.alex.librarian.library.BaseAction;
 import com.alex.librarian.library.Librarian;
 import com.alex.librarian.library.Library;
 
@@ -10,6 +13,7 @@ public class LibManager {
     public static void main(String[] args) {
         Library library = new Library();
         Librarian librarian = new Librarian(library);
+        librarian.addHandler(BaseAction.ADD_BOOK, new AddBookListener());
 
         try {
             librarian.addBook(new Book("QQWE", "Ekkel", "02.12.2001"));

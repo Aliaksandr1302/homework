@@ -6,7 +6,7 @@ import com.alex.librarian.entity.LibBook;
 import java.util.List;
 import java.util.Map;
 
-public class Librarian {
+public class Librarian extends LibWorker{
     private Library library;
     private final Map<Long, LibBook> ALL_BOOKS;
     private final Map<String, List<LibBook>> BOOKS_BY_AUTHORS;
@@ -24,6 +24,7 @@ public class Librarian {
             throw new RuntimeException("Book is already exist");
         }
         addToAuthorList(libBook);
+        fireEvent(BaseAction.ADD_BOOK);
     }
 
     private void addToAuthorList(LibBook book) {
