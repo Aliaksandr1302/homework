@@ -36,10 +36,11 @@ public class Box {
 
     private void catAliveProbability() {
         if (status) {
-        } else if (!cat.getIsAlive()) {
-            System.out.println("Cat is dead");
-        } else {
-            System.out.println("Cat is alive");
+            if (!cat.getIsAlive()) {
+                System.out.println("Cat is dead");
+            } else {
+                System.out.println("Cat is alive");
+            }
         }
     }
 

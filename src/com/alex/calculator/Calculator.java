@@ -17,7 +17,7 @@ public class Calculator {
         int eq = 0;
         System.out.println("Enter number1");
 
-        while(!scanner.hasNextDouble()) {
+        while (!scanner.hasNextDouble()) {
             System.out.println("Enter number1");
             scanner.next();
         }
@@ -25,10 +25,10 @@ public class Calculator {
         double result = scanner.nextDouble();
 
         label81:
-        while(eq != equally) {
-            while(true) {
+        while (eq != equally) {
+            while (true) {
                 String str;
-                for(str = scanner.nextLine(); str.length() != 1; str = scanner.nextLine()) {
+                for (str = scanner.nextLine(); str.length() != 1; str = scanner.nextLine()) {
                     System.out.println("Enter action");
                 }
 
@@ -38,7 +38,7 @@ public class Calculator {
                     if (action != equally) {
                         System.out.println("Enter number");
 
-                        while(!scanner.hasNextDouble()) {
+                        while (!scanner.hasNextDouble()) {
                             System.out.println("Enter number");
                             scanner.nextLine();
                         }
@@ -65,7 +65,7 @@ public class Calculator {
         }
 
         if (result % 1.0D == 0.0D) {
-            int res = (int)result;
+            int res = (int) result;
             System.out.println("Calculation result " + res);
         } else {
             System.out.println("Calculation result " + result);

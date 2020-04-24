@@ -13,7 +13,11 @@ public class Intern extends ItWorker implements MakerСoffee {
             setNeedCoffee(false);
         }
     }
-    public void givCoffee(){
-        makeCoffee();
+
+    public void giveCoffee(ItWorker itWorker){
+        if(itWorker.isNeedCoffee()){
+            itWorker.setAvailabilityCoffee(true);
+            itWorker.setNeedCoffee(false);
+        }
     }
 }

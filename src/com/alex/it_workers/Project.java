@@ -15,8 +15,8 @@ public class Project {
                 new ManualTester("Katya"),
                 new ProjectManager("Natasha")
         };
-        for (ItWorker itWorker: itWorkers){
-           System.out.println(itWorker.toString());
+        for (ItWorker itWorker : itWorkers) {
+            System.out.println(itWorker.toString());
         }
 
         workingDay(itWorkers);
@@ -24,27 +24,27 @@ public class Project {
     }
 
 
-
-    private static Intern findIntern(ItWorker[] itWorkers){
-        for (ItWorker itWorker: itWorkers){
-            if(itWorker instanceof Intern){
+    private static Intern findIntern(ItWorker[] itWorkers) {
+        for (ItWorker itWorker : itWorkers) {
+            if (itWorker instanceof Intern) {
                 return (Intern) itWorker;
             }
         }
         return null;
     }
 
-    private static void internGiveCoffee(ItWorker[] itWorkers){
-//        Intern intern = intern(itWorkers);
-//        intern.makeCoffee();
-    }
 
-    private static void workingDay(ItWorker[] itWorkers){
-     for (ItWorker itWorker: itWorkers){
-//     internGiveCoffee(itWorkers);
-         itWorker.makeCoffee();
-         System.out.println(itWorker.toString());
+    private static void workingDay(ItWorker[] itWorkers) {
+        Intern intern = findIntern(itWorkers);
+        for (ItWorker itWorker : itWorkers) {
+           if(intern != null) {
+               intern.giveCoffee(itWorker);
+               System.out.println(itWorker.toString());
+           }else{
+               itWorker.makeCoffee();
+           }
         }
 
     }
+
 }
